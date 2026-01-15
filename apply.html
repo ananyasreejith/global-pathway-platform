@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section class="content-section">
+        <div class="main-content">
+
+            <h2>Application Form</h2>
+
+            <form onsubmit="submitApplication(event)">
+
+                <input type="text" id="name" placeholder="Full Name" required><br><br>
+                <input type="email" id="email" placeholder="Email" required><br><br>
+                <input type="tel" id="phone" placeholder="Contact Number" required><br><br>
+
+                <input type="text" id="country" placeholder="Country Interested" required><br><br>
+
+                <select id="purpose" onchange="toggleFields()" required>
+                    <option value="">Select Purpose</option>
+                    <option value="study">Study</option>
+                    <option value="work">Work</option>
+                </select><br><br>
+
+                <!-- STUDY FIELDS -->
+                <div id="studyFields" style="display:none;">
+                    <input type="text" id="course" placeholder="Course Interested"><br><br>
+                </div>
+
+                <!-- WORK FIELDS -->
+                <div id="workFields" style="display:none;">
+                    <input type="text" id="jobTitle" placeholder="Job Title"><br><br>
+                </div>
+
+                <button class="primary-btn" type="submit">
+                    Submit Application
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- RESULT SECTION (DYNAMIC) -->
+    <section class="content-section" id="resultSection" style="display:none;">
+        <div class="main-content">
+            <h3 id="resultTitle"></h3>
+            <p id="resultContent"></p>
+        </div>
+    </section>
+
+    <!-- TERMS -->
+    <section class="content-section">
+        <div class="main-content">
+            <h3>Terms & Conditions</h3>
+            <p>
+                By submitting this application, you agree that the information
+                provided is accurate. Global Pathway reserves the right to
+                contact applicants and process data as per applicable laws.
+            </p>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
